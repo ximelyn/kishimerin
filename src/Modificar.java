@@ -30,20 +30,22 @@ public class Modificar extends javax.swing.JFrame {
         lblTituloModificar = new javax.swing.JLabel();
         txtAM = new javax.swing.JTextField();
         lblAutoresM = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblAño = new javax.swing.JLabel();
         txtNP = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        lblNPag = new javax.swing.JLabel();
         txtLibroM = new javax.swing.JTextField();
         txtNE = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblNombreL = new javax.swing.JLabel();
+        lblNE = new javax.swing.JLabel();
         txtEditorialM = new javax.swing.JTextField();
         txtFuente = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblEditorial = new javax.swing.JLabel();
+        lblFCD = new javax.swing.JLabel();
         txtLugarM = new javax.swing.JTextField();
         txtAutoresM = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        lblLugar = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblDatos = new javax.swing.JTable();
 
         setResizable(false);
 
@@ -61,44 +63,63 @@ public class Modificar extends javax.swing.JFrame {
 
         lblAutoresM.setText("Autor(es): ");
 
-        jLabel6.setText("Año:");
+        lblAño.setText("Año:");
 
-        jLabel7.setText("Num. Paginas:");
+        lblNPag.setText("Num. Paginas:");
 
-        jLabel3.setText("Nombre del libro:");
+        lblNombreL.setText("Nombre del libro:");
 
-        jLabel8.setText("Num. Edicion:");
+        lblNE.setText("Num. Edicion:");
 
-        jLabel4.setText("Editorial:");
+        lblEditorial.setText("Editorial:");
 
-        jLabel9.setText("Fuente de consulta(solo digital):");
+        lblFCD.setText("Fuente de consulta(solo digital):");
 
-        jLabel5.setText("Lugar:");
+        lblLugar.setText("Lugar:");
+
+        tblDatos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Autores", null},
+                {"Nombre del Libro", null},
+                {"Editorial", null},
+                {"Lugar", null},
+                {"Año", null},
+                {"Num. Paginas", null},
+                {"Num. Edicion", null},
+                {null, null}
+            },
+            new String [] {
+                "Datos", "Informacio"
+            }
+        ));
+        tblDatos.setToolTipText("");
+        jScrollPane1.setViewportView(tblDatos);
+        if (tblDatos.getColumnModel().getColumnCount() > 0) {
+            tblDatos.getColumnModel().getColumn(0).setResizable(false);
+            tblDatos.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTituloModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9)
+                        .addComponent(lblFCD)
                         .addGap(35, 35, 35)
                         .addComponent(txtFuente, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblNPag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblAutoresM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8))
+                                .addComponent(lblNombreL)
+                                .addComponent(lblEditorial)
+                                .addComponent(lblLugar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblAño, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblNE))
                         .addGap(111, 111, 111)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtNP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
@@ -108,11 +129,22 @@ public class Modificar extends javax.swing.JFrame {
                             .addComponent(txtEditorialM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
                             .addComponent(txtLibroM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
                             .addComponent(txtAutoresM, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addGap(0, 73, Short.MAX_VALUE))
+                .addGap(0, 111, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTituloModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(136, 136, 136)
+                                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,48 +159,46 @@ public class Modificar extends javax.swing.JFrame {
                             .addComponent(txtAutoresM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(6, 6, 6)
                         .addComponent(txtLibroM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3))
+                    .addComponent(lblNombreL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(lblEditorial)
                     .addComponent(txtEditorialM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(lblLugar)
                     .addComponent(txtLugarM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(lblAño)
                     .addComponent(txtAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(lblNPag)
                     .addComponent(txtNP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
+                    .addComponent(lblNE)
                     .addComponent(txtNE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
+                    .addComponent(lblFCD)
                     .addComponent(txtFuente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(33, 33, 33)
                 .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(246, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-       Menu n = new Menu();
-       n.setVisible(true);
-       objeto.setAutor(txtAutoresM.getText());
-       objeto.setEditorial(txtEditorialM.getText());
-       objeto.setLuga(txtLugarM.getText());
-       objeto.setNLibro(txtLibroM.getText());
-       objeto.setA(Integer.parseInt(txtAM.getText()));
        
+        Menu n = new Menu();
+       n.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMenuActionPerformed
 
     /**
@@ -208,15 +238,17 @@ public class Modificar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMenu;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAutoresM;
+    private javax.swing.JLabel lblAño;
+    private javax.swing.JLabel lblEditorial;
+    private javax.swing.JLabel lblFCD;
+    private javax.swing.JLabel lblLugar;
+    private javax.swing.JLabel lblNE;
+    private javax.swing.JLabel lblNPag;
+    private javax.swing.JLabel lblNombreL;
     private javax.swing.JLabel lblTituloModificar;
+    private javax.swing.JTable tblDatos;
     private javax.swing.JTextField txtAM;
     private javax.swing.JTextField txtAutoresM;
     private javax.swing.JTextField txtEditorialM;

@@ -32,7 +32,6 @@ public class Menu extends javax.swing.JFrame {
         btnInicio = new javax.swing.JButton();
         lblTituloMenu = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         btnregistrar.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
@@ -85,63 +84,67 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTituloMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMostrar)
-                    .addComponent(btnregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnAutores, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(65, 65, 65))
+                .addGap(11, 11, 11)
+                .addComponent(btnregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(btnMostrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
             .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(btnEliminar)
+                .addGap(86, 86, 86)
+                .addComponent(btnInicio)
+                .addGap(60, 60, 60)
+                .addComponent(btnAutores)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(lblTituloMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMostrar)
-                    .addComponent(btnInicio))
-                .addGap(12, 12, 12)
-                .addComponent(btnEliminar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnregistrar)
+                    .addComponent(btnMostrar)
+                    .addComponent(btnEliminar))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnInicio)
                     .addComponent(btnAutores))
-                .addGap(39, 39, 39))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
-       Modificar n = new Modificar();
-       n.setVisible(true);
+        Modificar n = new Modificar();
+        n.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         Bienvenido b = new Bienvenido();
-         b.setVisible(true);
+        b.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-       Eliminar e = new Eliminar();
-       e.setVisible(true);
+        Eliminar e = new Eliminar();
+        e.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
        Registrar r = new Registrar();
        r.setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_btnregistrarActionPerformed
 
     private void btnAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoresActionPerformed
-       Autores a = new Autores();
-       a.setVisible(true);
+        Autores a = new Autores();
+        a.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAutoresActionPerformed
 
     /**

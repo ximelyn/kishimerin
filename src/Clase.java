@@ -8,7 +8,7 @@
  * @author 21PROGA310
  */
 public class Clase {
-    private String Autor,NLibro,Editorial,Luga;
+    private String Autor,NLibro,Editorial,Luga,Consulta;
     private int A,NPag,NEdicion;
 
     public Clase() {
@@ -19,6 +19,7 @@ public class Clase {
         this.A = 0;
         this.NPag = 0;
         this.NEdicion = 0;
+        this.Consulta = null;
     }
 
     public String getAutor() {
@@ -76,6 +77,24 @@ public class Clase {
     public void setNEdicion(int NE) {
         this.NEdicion = NE;
     }
+
+    public String getConsulta() {
+        return Consulta;
+    }
+
+    public void setConsulta(String Con) {
+        this.Consulta = Con;
+    }
     
+    public String Eliminar(){
+        return this.Autor = null;
+        this.NLibro = null;
+        this.Editorial = null;
+        this.Luga = null;
+        this.A = 0;
+        this.NPag = 0;
+        this.NEdicion = 0;
+        this.Consulta = null;
+    }
     
 }

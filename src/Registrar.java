@@ -12,6 +12,7 @@ public class Registrar extends javax.swing.JFrame {
     /**
      * Creates new form Registrar
      */
+    Clase objeto = new Clase();
     public Registrar() {
         initComponents();
     }
@@ -42,9 +43,8 @@ public class Registrar extends javax.swing.JFrame {
         txtFuente = new javax.swing.JTextField();
         lblFuente = new javax.swing.JLabel();
         txtAutor = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnMenuR = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         lblAutor.setText("Autor(es): ");
@@ -66,11 +66,11 @@ public class Registrar extends javax.swing.JFrame {
 
         lblFuente.setText("Fuente de consulta(solo digital):");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jButton1.setText("Menu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMenuR.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnMenuR.setText("Menu");
+        btnMenuR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMenuRActionPerformed(evt);
             }
         });
 
@@ -113,7 +113,7 @@ public class Registrar extends javax.swing.JFrame {
                         .addComponent(lblTituloregistro, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(174, 174, 174)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnMenuR, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -155,17 +155,25 @@ public class Registrar extends javax.swing.JFrame {
                     .addComponent(lblFuente)
                     .addComponent(txtFuente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMenuR, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       Menu n = new Menu();
-       n.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnMenuRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuRActionPerformed
+       objeto.setAutor(txtAutor.getText());
+       objeto.setEditorial(txtEditorial.getText());
+       objeto.setLuga(txtLugar.getText());
+       objeto.setNLibro(txtNLibro.getText());
+       objeto.setA(Integer.parseInt(txtA.getText()));
+       objeto.setNPag(Integer.parseInt(txtNumPag.getText()));
+       objeto.setNEdicion(Integer.parseInt(txtNumEdicion.getText()));
+       this.setVisible(false);
+       Menu m = new Menu();
+       m.setVisible(true);
+    }//GEN-LAST:event_btnMenuRActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,7 +211,7 @@ public class Registrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnMenuR;
     private javax.swing.JLabel lblAutor;
     private javax.swing.JLabel lblEditorial;
     private javax.swing.JLabel lblFuente;
